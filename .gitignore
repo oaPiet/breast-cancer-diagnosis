@@ -1,3 +1,15 @@
-__pycache__/
+# Ignore model and data artifacts
+*.joblib
+*.pkl
 *.npy
+*.npz
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+# VSCode or IDE files (optional)
+.vscode/
