@@ -55,15 +55,15 @@ print(f'Coefficients:\n{logistic_regression_model.coef_}')
 cm = confusion_matrix(y_test, y_pred)
 plt.figure(figsize=(6, 4))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
-            xticklabels=['Malignant', 'Benign'],
-            yticklabels=['Malignant', 'Benign'])
+            xticklabels=['Benign', 'Malignant'],
+            yticklabels=['Benign', 'Malignant'])
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
 plt.show()
 
 print("\nClassification Report:")
-print(classification_report(y_test, y_pred, target_names=['Malignant', 'Benign']))
+print(classification_report(y_test, y_pred, target_names=['Benign', 'Malignant']))
 
 # === ROC Curve & AUC ===
 
@@ -72,7 +72,7 @@ fpr, tpr, _ = roc_curve(y_test, y_prob)
 auc = roc_auc_score(y_test, y_prob)
 
 plt.figure(figsize=(8, 6))
-plt.plot(fpr, tpr, label=f'AUC = {auc:.2f}')
+plt.plot(fpr, tpr, label=f'AUC = {auc:.4f}')
 plt.plot([0, 1], [0, 1], linestyle='--', color='gray')
 plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
