@@ -16,12 +16,15 @@ notebooks/
 ├── 01_eda_breast_cancer.ipynb
 ├── 02_preprocessing_breast_cancer.ipynb
 ├── 03_modeling_logreg_breast_cancer.ipynb
+├── 04_modeling_svm_breast_cancer.ipynb
 src/
 ├── 01_eda_breast_cancer.py
 ├── 02_preprocessing_breast_cancer.py
 ├── 03_modeling_logreg_breast_cancer.py
+├── 04_modeling_svm_breast_cancer.py
 ├── models/                             # Saved model artifacts
 │   ├── logistic_model.joblib
+│   ├── svm_model.joblib
 ├── README.md
 ```
 
@@ -30,12 +33,14 @@ src/
 * **01\_EDA\_Breast\_Cancer.ipynb**: Overview of dataset, distribution of features, diagnosis class balance.
 * **02\_Preprocessing\_BreastCancer.ipynb**: Handles missing values, label encoding, feature scaling, and data splits.
 * **03\_Modeling\_BreastCancer.ipynb**: Trains and evaluates models (Logistic Regression). Uses accuracy, precision, recall, F1-score, and ROC-AUC for evaluation.
+* **04\_Modeling\_SVM\_BreastCancer.ipynb**: Trains, tunes, and evaluates a Support Vector Machine (SVM) model, with a focus on maximizing recall.
 
 ## 🧪 Models
 
-| Model               | Accuracy | ROC AUC | Notes                         |
-| ------------------- | -------- | ------- | ----------------------------- |
-| Logistic Regression | 0.97     | 0.99    | Baseline model                |
+| Model                  | Accuracy | Recall | ROC AUC | Notes                         |
+| ---------------------- | -------- | ------ | ------- | ----------------------------- |
+| Logistic Regression    | 0.97     | 0.94   | 0.9947  | Baseline model                |
+| Support Vector Machine | 0.80     | 0.98   | 0.9787  | Tuned to prioritize recall    |
 
 ## 🛠️ Dependencies
 
